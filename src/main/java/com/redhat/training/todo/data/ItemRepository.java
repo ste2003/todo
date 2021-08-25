@@ -7,6 +7,8 @@ import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 
 import com.redhat.training.todo.model.Item;
 
@@ -18,24 +20,30 @@ public class ItemRepository {
 	
 	private List<Item> myItemList;
 	
-	@PostConstruct
-	public void seedTodoList() {
-		log.info("Seeding TODO List cache...");
-		myItemList = new ArrayList<Item>();
-		myItemList.add(new Item((long)1, "Buy Milk"));
-		myItemList.add(new Item((long)2, "Buy Eggs"));
-		myItemList.add(new Item((long)3, "Send EMail"));
-	}
+	@Inject
+	private EntityManager em;
 	
 	public void addItem(Item item) {
-		myItemList.add(item);
+		em.persist(item);
 	}
 	
+	/*
+	 * @PostConstruct public void seedTodoList() {
+	 * log.info("Seeding TODO List cache..."); myItemList = new ArrayList<Item>();
+	 * myItemList.add(new Item((long)1, "Buy Milk")); myItemList.add(new
+	 * Item((long)2, "Buy Eggs")); myItemList.add(new Item((long)3, "Send EMail"));
+	 * }
+	 * 
+	 * public void addItem(Item item) { myItemList.add(item); }
+	 */
+	
 	public List<Item> getAllItems(){
-		if (myItemList == null) {
-			myItemList = new ArrayList<Item>();
-		}
-		return myItemList;
+		/*
+		 * if (myItemList == null) { myItemList = new ArrayList<Item>(); }
+		 */
+		TypedQuery<Item> query = em.createQuery("SELECT i FROM Item i", Item.class);
+		//return myItemList;
+		return query.getResultList();
 	}
 	
 	public Item getItem(Long id) {

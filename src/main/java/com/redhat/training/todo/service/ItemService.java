@@ -20,7 +20,7 @@ public class ItemService {
 	
 	public void register(Item item) throws Exception {
 		//log.info("Adding new task: " + item.getDescription());
-		item.setId((long) (itemRepository.getItemCount() + 1));
+		//item.setId((long) (itemRepository.getItemCount() + 1));
 		
 		itemRepository.addItem(item);
 	}

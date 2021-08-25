@@ -1,6 +1,10 @@
 D:\workspace\todo\src\main\java\com\redhat\training\todo\service\ItemService.java
+D:\workspace\todo\src\main\java\com\redhat\training\todo\model\Grupo.java
 D:\workspace\todo\src\main\java\com\redhat\training\todo\data\ItemRepository.java
 D:\workspace\todo\src\main\java\com\redhat\training\todo\model\Item.java
+D:\workspace\todo\src\main\java\com\redhat\training\todo\rest\GrupoResourceRESTService.java
 D:\workspace\todo\src\main\java\com\redhat\training\todo\rest\JaxRsActivator.java
+D:\workspace\todo\src\main\java\com\redhat\training\todo\service\GrupoService.java
 D:\workspace\todo\src\main\java\com\redhat\training\todo\rest\ItemResourceRESTService.java
+D:\workspace\todo\src\main\java\com\redhat\training\todo\data\GrupoRepository.java
 D:\workspace\todo\src\main\java\com\redhat\training\todo\util\Resource.java

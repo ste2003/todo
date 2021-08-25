@@ -1,0 +1,4 @@
+com\redhat\training\todo\util\Resource.class
+com\redhat\training\todo\rest\JaxRsActivator.class
+com\redhat\training\todo\model\Grupo_.class
+com\redhat\training\todo\model\Item_.class
