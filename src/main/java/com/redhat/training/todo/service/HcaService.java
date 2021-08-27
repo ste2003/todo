@@ -7,6 +7,7 @@ import javax.inject.Inject;
 
 import com.redhat.training.todo.data.HcaRepository;
 import com.redhat.training.todo.data.ItemRepository;
+import com.redhat.training.todo.model.Expte;
 import com.redhat.training.todo.model.Hca;
 import com.redhat.training.todo.model.Item;
 
@@ -16,8 +17,8 @@ public class HcaService {
 	@Inject
 	 HcaRepository hcaRepository;
 	
-	public Hca find(Long hca_numero) {
-		return hcaRepository.getHca(hca_numero);
+	public Hca find(Expte expte) {
+		return hcaRepository.getHca(expte);
 	}
 	
 	public List<Hca> getAllHcas(){

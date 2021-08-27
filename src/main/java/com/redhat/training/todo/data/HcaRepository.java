@@ -22,7 +22,7 @@ public class HcaRepository {
 		Hca hca1 ;
 		hca1 = new Hca();
 		
-		hca1.setCaratula("Caratula 1");
+		hca1.setCaratula("Municipalidad de Curuzu Cuatia c/vecinos");
 		System.out.println("caratula: " + hca1.getCaratula());
 		Expte expte = new Expte();
 		expte.setOrg_codigo("3C1101");
@@ -45,12 +45,12 @@ public class HcaRepository {
 		
 		return query.getResultList();
 	}
-	public Hca getHca(Long hca_numero) {
+	public Hca getHca(Expte expte) {
 		/*
 		 * Hca testHca = null; for (int i = 0; i < myHcaList.size(); i++) { if
 		 * (myHcaList.get(i).getHca_numero() == hca_numero) { testHca =
 		 * myHcaList.get(i); } } return testHca;
 		 */
-		return em.find(Hca.class, hca_numero);
+		return em.find(Hca.class, expte);
 	}
 }
