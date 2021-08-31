@@ -15,6 +15,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import com.redhat.training.todo.model.Expte;
 import com.redhat.training.todo.model.Hca;
 import com.redhat.training.todo.model.Item;
 import com.redhat.training.todo.service.HcaService;
@@ -39,7 +40,12 @@ public class HcaResourceRESTService {
 	@Produces(MediaType.APPLICATION_JSON)
 	public Hca getHca(@PathParam("hca_numero") Long hca_numero){
 		System.out.println("en get x id *********************" + hca_numero);
-		return hcaService.find(hca_numero);
+		Expte expte = new Expte();
+		expte.setHca_anio(21);
+		expte.setHca_numero(hca_numero);
+		expte.setOrg_codigo("3C1101");
+		expte.setTcc_codigo("CXP");
+		return hcaService.find(expte);
 	}
 	
 	@POST

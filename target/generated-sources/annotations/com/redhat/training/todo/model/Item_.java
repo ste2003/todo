@@ -8,6 +8,7 @@ import javax.persistence.metamodel.StaticMetamodel;
 @StaticMetamodel(Item.class)
 public abstract class Item_ {
 
+	public static volatile SingularAttribute<Item, Grupo> grupo;
 	public static volatile SingularAttribute<Item, String> description;
 	public static volatile SingularAttribute<Item, Long> id;
 	public static volatile SingularAttribute<Item, Boolean> done;
